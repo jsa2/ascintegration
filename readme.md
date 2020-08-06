@@ -1,0 +1,1 @@
+go to https://securecloud.blog/2020/08/06/complete-guide-for-integrating-azure-security-center-alerts-2-ms-teams/ for explanation and deployement guide
