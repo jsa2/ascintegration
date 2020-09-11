@@ -9,8 +9,17 @@ async function sendToTeams2 (datain,SASURL) {
         var input = datain
         
         var facts = []
-        var alert = input.AlertUri || input.alertUri
+        var alert = (input.AlertUri || input.alertUri)
         
+        //Replace underscores for mobilelink
+        var mobilealert = alert.replace(new RegExp('_', 'g'), '\\_')
+      
+
+        facts.push({
+                name:'Triage(MobileLink)',
+                value:mobilealert
+        })
+
         delete  input.alertUri
         delete  input.alertUri 
         
@@ -65,7 +74,7 @@ async function sendToTeams2 (datain,SASURL) {
         })
         
         var body2 = MessageConstructor(facts,alert,SASURL)
-        //console.log(body2)
+        require('fs').writeFileSync('calldirect.json',body2)
         const uri = process.env['o365Webhook']
         
         var options = {

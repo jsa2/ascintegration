@@ -18,11 +18,10 @@ module.exports= function (facts,alert,SASURL) {
                 "name": "Triage",
                 "actions": [{
                     "@type": "OpenUri",
-                    "name": "Triage",
+                    "name": "Triage (desktop)",
                     "target": alert,
                     "targets": [
                         { "os": "default", "uri": alert },
-                        { "os": "iOS", "uri": alert },
                         { "os": "android", "uri": alert },
                         { "os": "windows", "uri": alert }
                     ]
