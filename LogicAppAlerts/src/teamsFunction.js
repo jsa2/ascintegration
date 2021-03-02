@@ -74,7 +74,7 @@ async function sendToTeams2 (datain,SASURL) {
         })
         
         var body2 = MessageConstructor(facts,alert,SASURL)
-        require('fs').writeFileSync('calldirect.json',body2)
+       
         const uri = process.env['o365Webhook']
         
         var options = {
